@@ -1,0 +1,7 @@
+bin_PROGRAMS= Iot_Timer_Server  
+Iot_Timer_Server_SOURCES = ListenEvent.cpp IotTimer.cpp ClientManager.cpp
+Iot_Timer_Server_CPPFLAGS = -g -O2 -D_LINUX
+Iot_Timer_Server_LDFLAGS = -ldl -levent_core -levent -lpthread
+
+INCLUDES = -I./ -I../ -I./libevent-2.1.8-stable/include
+Iot_Timer_Server_LDADD = -L/usr/lib64 -L/usr/local/lib64 -L/usr/local/lib -L../libevent-2.1.8-stable
